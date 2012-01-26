@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={'': ['README.rst']},
-    install_requires=['redis'],
+    install_requires=['rasputin'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

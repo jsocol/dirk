@@ -1,9 +1,17 @@
 from django.conf import settings
+import rasputin
 
-from utils import get_connection, get_prefix
+from utils import get_channel
 
 
 def say(channel, message):
-    conn = get_connection()
-    pub = '.'.join((get_prefix(), channel))
-    conn.publish(pub, message)
+    """Post a message to a dirk channel.
+
+    Dirk channels are mapped to one or more IRC channels.
+
+    """
+    data = {
+        'channel': channel,
+        'message': message
+    }
+    rasputin.send(get_channel(), data)
