@@ -13,7 +13,8 @@
     },
     "dependencies": {
         "irc": ">=0.2.0",
-        "rasputin": ">=0.0.1"
+        "rasputin": ">=0.0.1",
+        "nomnom": ">=0.4.2"
     },
     "bin": {
         "dirkbot": "./lib/dirk.js"

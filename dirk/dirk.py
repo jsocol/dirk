@@ -14,7 +14,7 @@ def say(channel, message):
     map_ = get_channel_map()
     irc_channels = map_.get(channel, [])
     data = {
-        'channel': irc_channels,
+        'channels': irc_channels,
         'message': message
     }
     rasputin.send(get_rasputin_channel(), data)

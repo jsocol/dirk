@@ -1,8 +1,8 @@
 """Dirk's rasputin event handlers."""
-import rasputin
 from rasputin import register
 
-from utils import get_channel
+from dirk import dirk
+from dirk.utils import get_channel
 
 
 @register.channel(get_channel())
@@ -25,4 +25,5 @@ def dirk_dispatcher(data):
     raise NotImplemented
 
     # Send the message back to the dirk node.js process.
-    rasputin.say(result)
+    channel, message = something()
+    dirk.say(channel, message)
