@@ -127,8 +127,6 @@ For example, assuming ``myapp`` is in ``INSTALLED_APPS``, you might have::
 
     @dirk.register('ping')
     def ping(*args, **kwargs):
-        if 'sender' in kwargs:
-            return '%s: pong!' % kwargs['sender']
         return 'pong!'
 
 *NB: I have no idea what args or kwargs might be passed to these yet.*
