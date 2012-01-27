@@ -1,8 +1,8 @@
 """Dirk's rasputin event handlers."""
 from rasputin import register
 
-from dirk import dirk
-from dirk.utils import get_channel
+from . import dirk
+from .utils import get_rasputin_channel
 
 
 _handlers_loaded = False
@@ -18,7 +18,7 @@ def autodiscover():
 autodiscover()
 
 
-@register.channel(get_channel())
+@register.channel(get_rasputin_channel() + '-in')
 def dirk_dispatcher(data):
     """Dispatches rasputin messages to dirk handlers and sends the result back.
 

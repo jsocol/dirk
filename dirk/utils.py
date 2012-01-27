@@ -27,5 +27,6 @@ def get_node_settings():
         'rasputin_password': getattr(settings, 'RASPUTIN_PASSWORD', None),
         'rasputin_db': getattr(settings, 'RASPUTIN_REDIS_DB', 0),
         'rasputin_channel': get_rasputin_channel(),
+        'rasputin_in_channel': get_rasputin_channel() + '-in',
     }
     return node
