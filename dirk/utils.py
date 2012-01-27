@@ -15,10 +15,13 @@ def get_rasputin_channel():
 
 
 def get_node_settings():
+    channels = set([])
+    for chans in get_channel_map().values():
+        channels |= set(chans)
     node = {
         'irc_host': getattr(settings, 'DIRK_IRC_HOST', DEFAULT_IRC_HOST),
         'irc_nick': getattr(settings, 'DIRK_IRC_NICK', DEFAULT_IRC_NICK),
-        'channels': get_channel_map().keys(),
+        'channels': list(channels),
         'rasputin_host': getattr(settings, 'RASPUTIN_HOST', 'localhost'),
         'rasputin_port': getattr(settings, 'RASPUTIN_PORT', 6379),
         'rasputin_password': getattr(settings, 'RASPUTIN_PASSWORD', None),
