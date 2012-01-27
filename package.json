@@ -1,0 +1,21 @@
+{
+    "name": "dirk",
+    "description": "Django-to-IRC bridge, IRC bot half.",
+    "version": "0.0.1",
+    "author": {
+        "name": "James Socol",
+        "email": "james@mozilla.com",
+        "url": "http://coffeeonthekeyboard.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jsocol/dirk.git"
+    },
+    "dependencies": {
+        "irc": ">=0.2.0",
+        "rasputin": ">=0.0.1"
+    },
+    "bin": {
+        "dirkbot": "./lib/dirk.js"
+    }
+}
