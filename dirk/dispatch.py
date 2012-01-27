@@ -5,6 +5,19 @@ from dirk import dirk
 from dirk.utils import get_channel
 
 
+_handlers_loaded = False
+
+
+def autodiscover():
+    global _handlers_loaded
+    if _handlers_loaded:
+        return
+    _handlers_loaded = True
+
+
+autodiscover()
+
+
 @register.channel(get_channel())
 def dirk_dispatcher(data):
     """Dispatches rasputin messages to dirk handlers and sends the result back.

@@ -18,3 +18,21 @@ def say(channel, message):
         'message': message
     }
     rasputin.send(get_rasputin_channel(), data)
+
+
+class AlreadyRegistered(Exception):
+    pass
+
+
+registry = {}
+
+
+def register(command):
+    """Register a dirk command handler."""
+    if command in registry:
+        raise AlreadyRegistered('%s is already a registered command' % command)
+
+    def _decorator(f):
+        registry[command] = f
+        return f
+    return _decorator
